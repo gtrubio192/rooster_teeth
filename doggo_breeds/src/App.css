@@ -1,10 +1,18 @@
 .App {
   text-align: center;
+  padding: 50px 50px;
+  background-color: turquoise;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.tile {
+  /* width: 35%; */
+  flex-basis: 35%;
+  /* display: inline-block; */
+  border: 5px solid white;
+  margin-bottom: 20px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

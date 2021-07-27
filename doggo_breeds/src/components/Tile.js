@@ -1,9 +1,9 @@
 import React, { setState, useState } from 'react';
 
-const Tile = () => {
+const Tile = ({dogBreed, image}) => {
   return (
-    <div>
-      TILE
+    <div className="tile">
+      {dogBreed}
     </div>
   )
 }

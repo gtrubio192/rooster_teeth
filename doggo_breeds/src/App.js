@@ -13,16 +13,10 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    // console.log(allDoggos);
     if(allDoggos.length > 0) {
       handleDogImages();
     }
   }, [allDoggos]);
-
-  useEffect(() => {
-    console.log(allDoggoPics);
-
-  }, [allDoggoPics]);
 
   const handlePageLoad = async () => {
     try {
@@ -38,8 +32,8 @@ const App = () => {
     // individual dog pic
     let url = `https://dog.ceo/api/breed/${dogName}/images/random`
     const { data } = await axios.get(url);
-    setAllDoggoPics(dogPics => [...dogPics, data.message]);
-    setDogTiles(dog => [...dog, {name: dogName, image: data.message}]);
+    // setAllDoggoPics(dogPics => [...dogPics, data.message]);
+    setDogTiles(dogs => [...dogs, {name: dogName, image: data.message}]);
   }
 
   const handleDogImages = async () => {
@@ -49,7 +43,10 @@ const App = () => {
 
   return (
     <div className="App">
-      <Tile />
+      {
+        dogTiles.map(({name, image}) => <Tile dogBreed={name} image={image}/>)
+      }
+      
     </div>
   );
 }
