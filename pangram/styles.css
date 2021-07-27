@@ -20,6 +20,8 @@
 }
 body {
   background-color: slategrey;
+  text-align: center;
+  font-family: "Segoe UI",Arial,sans-serif;
 }
 section {
   color: white;
