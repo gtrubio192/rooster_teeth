@@ -5,7 +5,6 @@ import './App.css';
 
 const App = () => {
   let [allDoggos, setAllDoggos] = useState([]);
-  let [allDoggoPics, setAllDoggoPics] = useState([]);
   let [dogTiles, setDogTiles] = useState([]);
 
   useEffect(() => {
@@ -32,7 +31,6 @@ const App = () => {
     // individual dog pic
     let url = `https://dog.ceo/api/breed/${dogName}/images/random`
     const { data } = await axios.get(url);
-    // setAllDoggoPics(dogPics => [...dogPics, data.message]);
     setDogTiles(dogs => [...dogs, {name: dogName, image: data.message}]);
   }
 

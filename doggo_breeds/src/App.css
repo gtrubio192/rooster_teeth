@@ -8,11 +8,35 @@
 }
 
 .tile {
-  /* width: 35%; */
-  flex-basis: 35%;
-  /* display: inline-block; */
+  flex-basis: 25%;
   border: 5px solid white;
   margin-bottom: 20px;
+}
+
+.tile-overlay {
+  background-color: rgba(112, 128, 144, .3);
+  padding: 10px 5px;
+}
+.tile-image-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  position: relative;
+}
+.tile-image {
+  width: 100%;
+  height: 275px;
+  transform: scale(.8);
+  padding: 10px;
+  padding-bottom: 30px;
+  border-radius: 5px;
+  background: rgba(240,230,220, .7);
+  box-shadow: 0 0 8px rgb(0 0 0 / 70%);
+  transition: 1s ease-in;
+}
+.tile-image:hover {
+  background: white;
+  transform: scale(.9);
 }
 
 @media (prefers-reduced-motion: no-preference) {
