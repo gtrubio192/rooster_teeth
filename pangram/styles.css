@@ -1,0 +1,31 @@
+.secret-show,
+.missing-label {
+  display: none;
+}
+
+/* .results-section {
+  background-color: cornsilk;
+} */
+
+#pangram-input, #submit-button {
+  border-radius: 2px;
+  border: none;
+  padding: 4px 8px;
+  margin-top: 24px;
+}
+#submit-button {
+  color: white;
+  font-weight: bold;
+  background-color: tomato;
+}
+body {
+  background-color: slategrey;
+}
+section {
+  color: white;
+  margin-top: 66px;
+}
+label {
+  display: block;
+}
+

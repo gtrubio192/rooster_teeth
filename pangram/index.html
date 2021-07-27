@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Pangram</title>
+  <meta name="description" content="Pangram Checker.">
+  <meta name="author" content="Gabe">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Pangram Checker.">
+
+  <link rel="stylesheet" href="./styles.css?v=1.0">
+  <link rel="stylesheet" href="./normalize.css?v=1.0">
+</head>
+
+<body>
+  <h1>Pangram Checker</h1>
+  <section>
+    <form>
+      <label for="pangram">Lets check your pangram!</label>
+      <input id="pangram-input" name="pangram" type="text"/>
+      <button id="submit-button">GO</button>
+    </form>
+  </section>
+  <section class="results-section">
+    <div>
+      <p class="missing-label">
+        Letters missing from pangram:
+      </p>
+      <p id="results"></p>
+      <div class="secret-show">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/I_2D8Eo15wE?start=38" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+  <script src="js/pangram.js"></script>
+</body>
+</html>
