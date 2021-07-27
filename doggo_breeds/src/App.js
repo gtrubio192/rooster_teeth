@@ -6,6 +6,8 @@ import './App.css';
 const App = () => {
   let [allDoggos, setAllDoggos] = useState([]);
   let [dogTiles, setDogTiles] = useState([]);
+  let [filteredDoggos, setDoggoFilter] = useState([]);
+  let [isFiltered, setFilteredResults] = useState(false);
 
   useEffect(() => {
     handlePageLoad();
@@ -28,8 +30,7 @@ const App = () => {
   }
 
   const getPic = async (dogName) => {
-    // individual dog pic
-    let url = `https://dog.ceo/api/breed/${dogName}/images/random`
+    let url = `https://dog.ceo/api/breed/${dogName}/images/random`;
     const { data } = await axios.get(url);
     setDogTiles(dogs => [...dogs, {name: dogName, image: data.message}]);
   }
@@ -39,12 +40,34 @@ const App = () => {
     await Promise.all(dogPics);
   }
 
+  const handleInput = (e) => {
+    let searchFilter = e.target.value;
+    if(searchFilter.trim().length > 0) {
+      let results = dogTiles.filter(dog => dog.name.includes(searchFilter));
+      setDoggoFilter(results);
+      setFilteredResults(true);
+    }
+    else {
+      setFilteredResults(false);
+    }
+  }
+
   return (
     <div className="App">
-      {
-        dogTiles.map(({name, image}) => <Tile dogBreed={name} image={image}/>)
-      }
-      
+      <header className="input-wrapper">
+        <input
+          placeholder="Search by dog breed"
+          className="breed-input" type="text"
+          onChange={handleInput}
+        />
+      </header>
+      <div className="tiles-wrapper">
+        {
+          isFiltered
+          ? filteredDoggos.map(({name, image}) => <Tile dogBreed={name} image={image}/>)
+          : dogTiles.map(({name, image}) => <Tile dogBreed={name} image={image}/>)
+        }
+      </div>
     </div>
   );
 }

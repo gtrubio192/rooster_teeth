@@ -1,70 +1,116 @@
 .App {
   text-align: center;
-  padding: 50px 50px;
+  padding: 10px;
+  position: relative;
+  padding-top: 50px;
+}
+
+.tiles-wrapper {
   background-color: turquoise;
+  padding: 50px 25px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .tile {
-  flex-basis: 25%;
-  border: 5px solid white;
+  flex-basis: 45%;
   margin-bottom: 20px;
 }
 
 .tile-overlay {
   background-color: rgba(112, 128, 144, .3);
   padding: 10px 5px;
+  font-weight: 700;
+  color: white;
 }
+
 .tile-image-wrapper {
   display: flex;
   justify-content: space-evenly;
   padding: 10px;
-  position: relative;
 }
+
 .tile-image {
   width: 100%;
-  height: 275px;
-  transform: scale(.8);
+  height: 100px;
+  transform: scale(1);
   padding: 10px;
   padding-bottom: 30px;
   border-radius: 5px;
-  background: rgba(240,230,220, .7);
+  background: rgba(240,230,220, .9);
   box-shadow: 0 0 8px rgb(0 0 0 / 70%);
   transition: 1s ease-in;
 }
-.tile-image:hover {
+
+.tile:hover .tile-image {
   background: white;
-  transform: scale(.9);
+  transform: scale(1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.breed-input {
+  border-radius: 4px;
+  border: 2px solid gray;
+  padding: 12px 8px;
+  width: 84%;
+  text-align: center;
+}
+
+.input-wrapper {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 15px 0px 15px;
+  background-color: turquoise;
+  box-shadow: 0 0 5px 0 rgb(0 0 0 / 40%);
+  -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.40);
+  -webkit-box-shadow: 0 0 5px 0 rgb(0 0 0 / 40%);
+}
+
+@media only screen and (min-width: 768px) {
+  .App {
+    padding: 50px;
+  }
+  .tile-image {
+    width: 100%;
+    transform: scale(.9);
+    height: 200px;
+    padding: 10px;
+    padding-bottom: 30px;
+  }
+  .tiles-wrapper {
+    padding: 50px 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .tile {
+    flex-basis: 30%;
+    border: 5px;
+    margin-bottom: 10px;
+  }
+  .tile-overlay {
+    font-size: larger;
+  }
+  .breed-input {
+    width: 50%;
+    padding: 15px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media all and (min-width: 824px) {
+  .tile-image {
+    height: 257px;
   }
-  to {
-    transform: rotate(360deg);
+  .tile {
+    margin-bottom: 25px;
+  }
+}
+
+@media all and (min-width: 1025px) {
+  .tile {
+    flex-basis: 25%;
   }
 }

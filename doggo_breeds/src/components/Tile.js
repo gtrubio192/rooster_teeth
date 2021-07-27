@@ -1,17 +1,16 @@
-import React, { setState, useState } from 'react';
+import React from 'react';
 
 const Tile = ({dogBreed, image}) => {
   return (
-    <div className="tile">
+    <div className="tile" key={dogBreed}>
       <div className="tile-overlay">
-        {dogBreed}
+        {dogBreed.toUpperCase()}
       </div>
       <div className="tile-image-wrapper">
         <img className="tile-image" src={image} />
       </div>
-      
     </div>
-  )
+  );
 }
 
 export default Tile;
